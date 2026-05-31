@@ -97,7 +97,7 @@ margin-top:20px;
 <p>ゲーム制作・動画編集などに使えるフリー素材</p>
 
 <div class="search">
-<input type="text" id="search" placeholder="検索">
+<input type="text" id="search" placeholder="猫 または 犬 で検索">
 </div>
 </header>
 
@@ -105,79 +105,7 @@ margin-top:20px;
 Google AdSense設置予定エリア
 </div>
 
-<div class="gallery">
-
-<div class="card">
-<img src="images/cat1.png" alt="cat">
-<a class="download" href="images/cat1.png" download>
-ダウンロード
-</a>
-</div>
-
-<div class="card">
-<img src="images/cat2.png" alt="cat">
-<a class="download" href="images/cat2.png" download>
-ダウンロード
-</a>
-</div>
-
-<div class="card">
-<img src="images/cat3.png" alt="cat">
-<a class="download" href="images/cat3.png" download>
-ダウンロード
-</a>
-</div>
-
-<div class="card">
-<img src="images/cat4.png" alt="cat">
-<a class="download" href="images/cat4.png" download>
-ダウンロード
-</a>
-</div>
-
-<div class="card">
-<img src="images/cat5.png" alt="cat">
-<a class="download" href="images/cat5.png" download>
-ダウンロード
-</a>
-</div>
-
-<div class="card">
-<img src="images/dog1.png" alt="dog">
-<a class="download" href="images/dog1.png" download>
-ダウンロード
-</a>
-</div>
-
-<div class="card">
-<img src="images/dog2.png" alt="dog">
-<a class="download" href="images/dog2.png" download>
-ダウンロード
-</a>
-</div>
-
-<div class="card">
-<img src="images/dog3.png" alt="dog">
-<a class="download" href="images/dog3.png" download>
-ダウンロード
-</a>
-</div>
-
-<div class="card">
-<img src="images/dog4.png" alt="dog">
-<a class="download" href="images/dog4.png" download>
-ダウンロード
-</a>
-</div>
-
-<div class="card">
-<img src="images/dog5.png" alt="dog">
-<a class="download" href="images/dog5.png" download>
-ダウンロード
-</a>
-</div>
-
-</div>
+<div class="gallery" id="gallery"></div>
 
 <footer>
 © 2026 Animal Assets
@@ -185,6 +113,41 @@ Google AdSense設置予定エリア
 
 <script>
 
+const gallery = document.getElementById("gallery");
+
+// 猫 1～50
+for(let i=1;i<=50;i++){
+
+gallery.innerHTML += `
+<div class="card" data-type="cat">
+<img src="images/cat${i}.png" alt="cat">
+<a class="download"
+href="images/cat${i}.png"
+download>
+ダウンロード
+</a>
+</div>
+`;
+
+}
+
+// 犬 1～50
+for(let i=1;i<=50;i++){
+
+gallery.innerHTML += `
+<div class="card" data-type="dog">
+<img src="images/dog${i}.png" alt="dog">
+<a class="download"
+href="images/dog${i}.png"
+download>
+ダウンロード
+</a>
+</div>
+`;
+
+}
+
+// 検索
 const search=document.getElementById("search");
 
 search.addEventListener("keyup",function(){
@@ -193,10 +156,12 @@ const value=search.value.toLowerCase();
 
 document.querySelectorAll(".card").forEach(card=>{
 
-const img=card.querySelector("img");
-const text=(img.alt || "").toLowerCase();
+const type=card.dataset.type;
 
-if(text.includes(value)){
+if(
+value==="" ||
+type.includes(value)
+){
 card.style.display="block";
 }else{
 card.style.display="none";
