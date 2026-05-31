@@ -3,21 +3,22 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>無料動物イラスト素材</title>
 
 <style>
+
 body{
 margin:0;
 font-family:sans-serif;
-background:#f7f7f7;
+background:#f5f5f5;
 }
 
 header{
 background:white;
 padding:20px;
 text-align:center;
-box-shadow:0 2px 5px rgba(0,0,0,.1);
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
 h1{
@@ -32,12 +33,13 @@ margin-top:15px;
 width:300px;
 max-width:90%;
 padding:10px;
+font-size:16px;
 }
 
 .ad{
-background:#fff4c2;
-margin:20px;
+background:#fff3cd;
 padding:20px;
+margin:20px;
 text-align:center;
 border-radius:10px;
 }
@@ -53,34 +55,37 @@ padding:20px;
 background:white;
 border-radius:10px;
 overflow:hidden;
-box-shadow:0 2px 5px rgba(0,0,0,.1);
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
 .card img{
 width:100%;
+height:250px;
+object-fit:cover;
 display:block;
-}
-
-.card h3{
-padding:10px;
-margin:0;
 }
 
 .download{
 display:block;
-text-align:center;
-background:#4caf50;
+background:#4CAF50;
 color:white;
-padding:10px;
+text-align:center;
+padding:12px;
 text-decoration:none;
+font-weight:bold;
+}
+
+.download:hover{
+opacity:0.9;
 }
 
 footer{
 background:white;
 padding:20px;
-margin-top:20px;
 text-align:center;
+margin-top:20px;
 }
+
 </style>
 
 </head>
@@ -92,7 +97,7 @@ text-align:center;
 <p>ゲーム制作・動画編集などに使えるフリー素材</p>
 
 <div class="search">
-<input type="text" id="search" placeholder="素材を検索">
+<input type="text" id="search" placeholder="検索">
 </div>
 </header>
 
@@ -103,25 +108,71 @@ Google AdSense設置予定エリア
 <div class="gallery">
 
 <div class="card">
-<img src="images/cat1.png">
-
+<img src="images/cat1.png" alt="cat">
 <a class="download" href="images/cat1.png" download>
 ダウンロード
 </a>
 </div>
 
 <div class="card">
-<img src="images/dog1.png">
+<img src="images/cat2.png" alt="cat">
+<a class="download" href="images/cat2.png" download>
+ダウンロード
+</a>
+</div>
 
+<div class="card">
+<img src="images/cat3.png" alt="cat">
+<a class="download" href="images/cat3.png" download>
+ダウンロード
+</a>
+</div>
+
+<div class="card">
+<img src="images/cat4.png" alt="cat">
+<a class="download" href="images/cat4.png" download>
+ダウンロード
+</a>
+</div>
+
+<div class="card">
+<img src="images/cat5.png" alt="cat">
+<a class="download" href="images/cat5.png" download>
+ダウンロード
+</a>
+</div>
+
+<div class="card">
+<img src="images/dog1.png" alt="dog">
 <a class="download" href="images/dog1.png" download>
 ダウンロード
 </a>
 </div>
 
 <div class="card">
-<img src="images/fox1.png">
+<img src="images/dog2.png" alt="dog">
+<a class="download" href="images/dog2.png" download>
+ダウンロード
+</a>
+</div>
 
-<a class="download" href="images/fox1.png" download>
+<div class="card">
+<img src="images/dog3.png" alt="dog">
+<a class="download" href="images/dog3.png" download>
+ダウンロード
+</a>
+</div>
+
+<div class="card">
+<img src="images/dog4.png" alt="dog">
+<a class="download" href="images/dog4.png" download>
+ダウンロード
+</a>
+</div>
+
+<div class="card">
+<img src="images/dog5.png" alt="dog">
+<a class="download" href="images/dog5.png" download>
 ダウンロード
 </a>
 </div>
@@ -133,18 +184,28 @@ Google AdSense設置予定エリア
 </footer>
 
 <script>
+
 const search=document.getElementById("search");
 
-search.addEventListener("keyup",()=>{
+search.addEventListener("keyup",function(){
+
 const value=search.value.toLowerCase();
 
 document.querySelectorAll(".card").forEach(card=>{
-card.style.display=
-card.innerText.toLowerCase().includes(value)
-? "block"
-: "none";
+
+const img=card.querySelector("img");
+const text=(img.alt || "").toLowerCase();
+
+if(text.includes(value)){
+card.style.display="block";
+}else{
+card.style.display="none";
+}
+
 });
+
 });
+
 </script>
 
 </body>
