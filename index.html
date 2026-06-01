@@ -106,12 +106,7 @@ margin-top:20px;
 </div>
 
 <div class="gallery" id="gallery"></div>
-<div style="text-align:center; padding:20px;">
-  <a href="page1.html">1</a>
-  <a href="page2.html">2</a>
-  <a href="page3.html">3</a>
-  <a href="page4.html">4</a>
-  <a href="page5.html">5</a>
+
 </div>
 <div style="text-align:center;padding:20px;">
 <a href="index.html">トップ</a>
@@ -133,7 +128,7 @@ const gallery = document.getElementById("gallery");
 
 // 猫 1～50
 // 猫 1～20
-for(let i=1;i<=50;i++)
+for(let i=51;i<=100;i++)
 
 gallery.innerHTML += `
 <div class="card" data-type="cat">
@@ -149,8 +144,7 @@ download>
 }
 
 // 犬 1～50
-for(let i=1;i<=50;i++)
-
+for(let i=51;i<=100;i++)
 gallery.innerHTML += `
 <div class="card" data-type="dog">
 <img src="images/cat${i}.png" alt="dog">
