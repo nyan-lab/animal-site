@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>無料犬イラスト・猫イラスト素材｜商用利用OKのフリー画像ダウンロード</title>
-<meta name="description" content="無料で使える犬猫イラスト素材サイト。商用利用OK。ゲーム制作、動画編集、配信、Web制作に使えるフリー素材を配布しています。">
+
+<meta name="description" content="無料で使える犬・猫のイラスト素材サイト。商用利用OK。ゲーム制作、動画編集、YouTube、ブログ、SNS、Web制作に利用できるフリー素材を配布しています。">
+
+<meta name="keywords" content="無料イラスト,フリー素材,犬イラスト,猫イラスト,動物イラスト,商用利用可,商用利用OK,無料画像,ゲーム素材,動画編集素材,YouTube素材">
+
+<meta name="robots" content="index,follow">
+
+<link rel="canonical" href="https://animal-site.inuneko.workers.dev/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="無料犬猫イラスト素材">
+<meta property="og:description" content="商用利用可能な犬猫フリー素材サイト">
+<meta property="og:url" content="https://animal-site.inuneko.workers.dev/">
+
+<meta name="twitter:card" content="summary_large_image">
+
 <style>
+
 body{
 margin:0;
 font-family:sans-serif;
@@ -32,6 +50,13 @@ width:300px;
 max-width:90%;
 padding:10px;
 font-size:16px;
+}
+
+.info{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:10px;
 }
 
 .ad{
@@ -63,6 +88,12 @@ object-fit:cover;
 display:block;
 }
 
+.card h2{
+font-size:16px;
+padding:10px;
+margin:0;
+}
+
 .download{
 display:block;
 background:#4CAF50;
@@ -83,75 +114,159 @@ padding:20px;
 text-align:center;
 margin-top:20px;
 }
+
+footer a{
+margin:0 10px;
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
-<h1>無料犬猫イラスト素材</h1>
-<p>ゲーム制作・動画などに使える犬猫フリー素材</p>
+
+<h1>無料犬イラスト・猫イラスト素材【商用利用OK】</h1>
+
+<p>
+ゲーム制作・動画編集・配信・ブログで使えるフリー素材
+</p>
 
 <div class="search">
-<input type="text" id="search" placeholder="cat または dog で検索">
+<input
+type="text"
+id="search"
+placeholder="cat または dog で検索">
 </div>
+
 </header>
 
+<section class="info">
+
+<h2>無料犬猫イラスト素材サイト</h2>
+
+<p>
+当サイトでは犬や猫のイラスト素材を無料配布しています。
+商用利用可能で、ゲーム制作、動画編集、YouTube配信、
+SNS投稿、ホームページ制作などにご利用いただけます。
+</p>
+
+</section>
+
 <div class="ad">
+
+Google AdSense設置予定エリア
+
 </div>
 
 <div class="gallery" id="gallery"></div>
 
 <footer>
+
 <p>
 <a href="terms.html">利用規約</a> |
 <a href="privacy.html">プライバシーポリシー</a> |
 <a href="contact.html">お問い合わせ</a>
 </p>
-<p>© 2026 Animal Assets</p>
+
+<p>
+© 2026 Animal Assets
+</p>
+
 </footer>
 
 <script>
+
 const gallery = document.getElementById("gallery");
 
-// 猫 1～50
-for(let i=1; i<=50; i++) {
-  gallery.innerHTML += `
-  <div class="card" data-type="cat">
-  <img src="images/cat${i}.png" alt="cat">
-  <a class="download" href="images/cat${i}.png" download>
-  ダウンロード
-  </a>
-  </div>
-  `;
+
+// 猫 1〜50
+
+for(let i=1;i<=50;i++){
+
+gallery.innerHTML += `
+<div class="card" data-type="cat">
+
+<img
+src="images/cat${i}.png"
+alt="無料猫イラスト素材 ${i}">
+
+<h2>猫イラスト No.${i}</h2>
+
+<a
+class="download"
+href="images/cat${i}.png"
+download>
+
+ダウンロード
+
+</a>
+
+</div>
+`;
+
 }
 
-// 犬 1～50
-for(let i=1; i<=50; i++) {
-  gallery.innerHTML += `
-  <div class="card" data-type="dog">
-  <img src="images/dog${i}.png" alt="dog">
-  <a class="download" href="images/dog${i}.png" download>
-  ダウンロード
-  </a>
-  </div>
-  `;
+
+// 犬 1〜50
+
+for(let i=1;i<=50;i++){
+
+gallery.innerHTML += `
+<div class="card" data-type="dog">
+
+<img
+src="images/dog${i}.png"
+alt="無料犬イラスト素材 ${i}">
+
+<h2>犬イラスト No.${i}</h2>
+
+<a
+class="download"
+href="images/dog${i}.png"
+download>
+
+ダウンロード
+
+</a>
+
+</div>
+`;
+
 }
+
 
 // 検索
-const search = document.getElementById("search");
 
-search.addEventListener("keyup", function(){
-  const value = search.value.toLowerCase();
-  document.querySelectorAll(".card").forEach(card => {
-    const type = card.dataset.type;
-    if(value === "" || type.includes(value)){
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
+const search =
+document.getElementById("search");
+
+search.addEventListener("keyup",()=>{
+
+const value =
+search.value.toLowerCase();
+
+document
+.querySelectorAll(".card")
+.forEach(card=>{
+
+const type =
+card.dataset.type;
+
+if(
+value==="" ||
+type.includes(value)
+){
+card.style.display="block";
+}else{
+card.style.display="none";
+}
+
 });
+
+});
+
 </script>
 
 </body>
